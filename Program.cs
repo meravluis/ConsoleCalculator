@@ -37,27 +37,15 @@ namespace Console_calculator
                     multiplicationInterface.Display();
                     break;
 
-
                 case "4":
                 
                     DivitionInterface divitionInterface = new DivitionInterface();
                     divitionInterface.Display();
                     break;
 
-
                 default:
                 break;
-            }
-            
-            
-
-            
-
-           
-
-            
-
-
+            }  
         }
     }
 }
