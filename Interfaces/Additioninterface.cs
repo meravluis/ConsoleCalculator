@@ -1,10 +1,10 @@
 using System;
 using Console_calculator.Operations;
-
+using ConsoleCalculator.Contracts;
 
 namespace Console_calculator.Interfaces
 {
-    public class AdditionInterface
+    public class AdditionInterface : IVisualInterface
     {
         public void Display ()
         {
