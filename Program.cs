@@ -44,20 +44,9 @@ namespace Console_calculator
                     divitionInterface.Display();
                     break;
 
-
                 default:
                 break;
-            }
-            
-            
-
-            
-
-           
-
-            
-
-
+            }  
         }
     }
 }
