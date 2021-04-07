@@ -37,7 +37,6 @@ namespace Console_calculator
                     multiplicationInterface.Display();
                     break;
 
-
                 case "4":
                 
                     DivitionInterface divitionInterface = new DivitionInterface();
