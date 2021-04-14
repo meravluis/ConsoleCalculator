@@ -1,11 +1,9 @@
 ﻿using System;
-using Console_calculator.Interfaces;
-
+using ConsoleCalculator.Strategies;
 
 namespace Console_calculator
 {
     class Program
-    
     {
         static void Main(string[] args)
         {
@@ -15,37 +13,32 @@ namespace Console_calculator
             Console.WriteLine("2) Substraction");
             Console.WriteLine("3) Multiplication");
             Console.WriteLine("4) Divition");
+            Console.WriteLine("5) Power");
 
             string OpcionSeleccionada = Console.ReadLine();
+
+            VisualInterfacesContext context = new VisualInterfacesContext();
+
             switch (OpcionSeleccionada)
             {
                 case "1":
-                   
-                    AdditionInterface additionInterface = new AdditionInterface();
-                    additionInterface.Display();
+                    context.SetInterface(VisualInterfaceEnum.Addition);
                     break;
-
                 case "2":
-
-                    SubtractionInterface subtractionInterface =new SubtractionInterface();
-                    subtractionInterface.Display();
+                    context.SetInterface(VisualInterfaceEnum.Substraction);
                     break;
-
                 case "3":
-
-                    MultiplicationInterface multiplicationInterface = new MultiplicationInterface();
-                    multiplicationInterface.Display();
+                    context.SetInterface(VisualInterfaceEnum.Multiplication);
                     break;
-
                 case "4":
-                
-                    DivitionInterface divitionInterface = new DivitionInterface();
-                    divitionInterface.Display();
+                    context.SetInterface(VisualInterfaceEnum.Divition);
                     break;
+                case "5":
+                    context.SetInterface(VisualInterfaceEnum.Power);
+                    break;
+            }
 
-                default:
-                break;
-            }  
+            context.DisplayInterface();
         }
     }
 }
