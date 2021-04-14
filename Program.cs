@@ -13,14 +13,32 @@ namespace Console_calculator
             Console.WriteLine("2) Substraction");
             Console.WriteLine("3) Multiplication");
             Console.WriteLine("4) Divition");
+            Console.WriteLine("5) Power");
 
             string OpcionSeleccionada = Console.ReadLine();
 
-            VisualInterfaceContext visualInterface = new VisualInterfaceContext();
+            VisualInterfacesContext context = new VisualInterfacesContext();
 
-            visualInterface.SetStrategy(OpcionSeleccionada);
+            switch (OpcionSeleccionada)
+            {
+                case "1":
+                    context.SetInterface(VisualInterfaceEnum.Addition);
+                    break;
+                case "2":
+                    context.SetInterface(VisualInterfaceEnum.Substraction);
+                    break;
+                case "3":
+                    context.SetInterface(VisualInterfaceEnum.Multiplication);
+                    break;
+                case "4":
+                    context.SetInterface(VisualInterfaceEnum.Divition);
+                    break;
+                case "5":
+                    context.SetInterface(VisualInterfaceEnum.Power);
+                    break;
+            }
 
-            visualInterface.Display();
+            context.DisplayInterface();
         }
     }
 }

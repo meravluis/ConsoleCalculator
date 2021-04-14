@@ -4,7 +4,7 @@ using ConsoleCalculator.Contracts;
 
 namespace Console_calculator.Interfaces
 {
-    public class MultiplicationInterface : IVisualInterface
+    public class Multiplicationinterface : IVisualInterface
     {
         public void Display ()
         {
