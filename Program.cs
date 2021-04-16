@@ -7,6 +7,8 @@ namespace Console_calculator
     {
         static void Main(string[] args)
         {
+            VisualInterfacesContext context = new VisualInterfacesContext();
+
             Console.WriteLine("Welcome to the Calculator");
             Console.WriteLine("Choose your Option: ");
             Console.WriteLine("1) Addition");
@@ -17,27 +19,9 @@ namespace Console_calculator
 
             string OpcionSeleccionada = Console.ReadLine();
 
-            VisualInterfacesContext context = new VisualInterfacesContext();
+            Enum.TryParse<VisualInterfaceEnum>(OpcionSeleccionada, out VisualInterfaceEnum opcionEnum);
 
-            switch (OpcionSeleccionada)
-            {
-                case "1":
-                    context.SetInterface(VisualInterfaceEnum.Addition);
-                    break;
-                case "2":
-                    context.SetInterface(VisualInterfaceEnum.Substraction);
-                    break;
-                case "3":
-                    context.SetInterface(VisualInterfaceEnum.Multiplication);
-                    break;
-                case "4":
-                    context.SetInterface(VisualInterfaceEnum.Divition);
-                    break;
-                case "5":
-                    context.SetInterface(VisualInterfaceEnum.Power);
-                    break;
-            }
-
+            context.SetInterface(opcionEnum);
             context.DisplayInterface();
         }
     }
