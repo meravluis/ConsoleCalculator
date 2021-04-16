@@ -6,21 +6,21 @@ namespace ConsoleCalculator.Strategies
 {
     public class VisualInterfacesContext
     {
-        private Dictionary<VisualInterfaceEnum, IVisualInterface> interfaces;
+        private Dictionary<string, IVisualInterface> interfaces;
         private IVisualInterface interfazSeleccionada;
 
         public VisualInterfacesContext()
         {
-            interfaces = new Dictionary<VisualInterfaceEnum, IVisualInterface>();
+            interfaces = new Dictionary<string, IVisualInterface>();
 
-            interfaces.Add(VisualInterfaceEnum.Addition, new AdditionInterface());
-            interfaces.Add(VisualInterfaceEnum.Substraction, new SubtractionInterface());
-            interfaces.Add(VisualInterfaceEnum.Multiplication, new Powerinterface());
-            interfaces.Add(VisualInterfaceEnum.Divition, new DivitionInterface());
-            interfaces.Add(VisualInterfaceEnum.Power, new Powerinterface());
+            interfaces.Add("1", new AdditionInterface());
+            interfaces.Add("2", new SubtractionInterface());
+            interfaces.Add("3", new Powerinterface());
+            interfaces.Add("4", new DivitionInterface());
+            interfaces.Add("5", new Powerinterface());
         }
 
-        public void SetInterface(VisualInterfaceEnum visualInterface)
+        public void SetInterface(string visualInterface)
         {
             interfazSeleccionada = interfaces.GetValueOrDefault(visualInterface);
         }
@@ -29,14 +29,5 @@ namespace ConsoleCalculator.Strategies
         {
             interfazSeleccionada.Display();
         }
-    }
-
-    public enum VisualInterfaceEnum
-    {
-        Addition,
-        Substraction,
-        Multiplication,
-        Divition,
-        Power
     }
 }
